@@ -46,10 +46,13 @@ class App extends React.Component {
       return (
         <div className="px-2 d-flex">
           <div className="py-4 w-25">
-            <h2 className="py-2">Live location of ISS </h2>
+            <h2 className="py-2 text-center">
+              Live location of the International Space Station
+            </h2>
 
             <div className="p-3">
               <input
+                className="mx-2"
                 type="range"
                 min="1"
                 max="5"
@@ -84,7 +87,7 @@ class App extends React.Component {
                     clearInterval(this.state.intervalId);
                     this.setState({ isRunning: false });
                   }}
-                  className="d-sm-block btn btn-primary btn-sm py-1 mx-2"
+                  className="d-sm-block btn btn-primary btn-sm py-1 mx-2 my-2"
                 >
                   Stop
                 </button>
