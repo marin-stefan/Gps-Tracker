@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       isRunning: true,
       position: null,
-      interval: 1000,
+      interval:0,
       intervalId: null,
     };
   }
@@ -34,7 +34,7 @@ class App extends React.Component {
         .then((response) => response.json())
         .then((data) => {
           data = Object.values(data.iss_position);
-          let coordinates = data.map((elem) => (elem = Number(elem)));
+          let coordinates = data.map((elem) => (elem = +(elem)));
           this.setState({ position: coordinates });
         });
     }, interval);
@@ -131,12 +131,12 @@ class App extends React.Component {
     return (
       <div>
         <header>
-          <h1 className="text-primary bg-warning py-4 text-center">
+          <h1 className="text-primary bg-light my-1 mx-2 border rounded shadow py-4 text-center">
             Gps Tracker
           </h1>
         </header>
         <div className="d-flex px-3 py-3 mb-2 h-fluid">{this.displayC()}</div>
-        <footer className="d-flex bg-info justify-content-around py-3">
+        <footer className="d-flex bg-light mx-2 my-2 border rounded shadow justify-content-around py-3">
           <div>
             <h4>Resources</h4>
             <p>
