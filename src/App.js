@@ -11,8 +11,6 @@ class App extends React.Component {
       position: null,
       interval: 0,
       intervalId: null,
-      
-      
     };
   }
 
@@ -38,7 +36,7 @@ class App extends React.Component {
           let coordinates = [];
           coordinates.push(+data.latitude);
           coordinates.push(+data.longitude);
-          this.setState({ position: coordinates});
+          this.setState({ position: coordinates });
         });
     }, interval);
     this.setState({ intervalId });
