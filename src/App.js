@@ -9,8 +9,10 @@ class App extends React.Component {
     this.state = {
       isRunning: true,
       position: null,
-      interval:0,
+      interval: 0,
       intervalId: null,
+      
+      
     };
   }
 
@@ -30,12 +32,13 @@ class App extends React.Component {
       return;
     }
     const intervalId = setInterval(() => {
-      fetch("http://api.open-notify.org/iss-now.json")
+      fetch("https://api.wheretheiss.at/v1/satellites/25544")
         .then((response) => response.json())
         .then((data) => {
-          data = Object.values(data.iss_position);
-          let coordinates = data.map((elem) => (elem = +(elem)));
-          this.setState({ position: coordinates });
+          let coordinates = [];
+          coordinates.push(+data.latitude);
+          coordinates.push(+data.longitude);
+          this.setState({ position: coordinates});
         });
     }, interval);
     this.setState({ intervalId });
@@ -100,8 +103,8 @@ class App extends React.Component {
                   ? "Current location is:"
                   : "Last location was:"}{" "}
               </h3>
-              <p>Latitude : "{Number(this.state.position[0])}"</p>
-              <p>Longitude: "{Number(this.state.position[1])}"</p>
+              <p>Latitude : "{+this.state.position[0]}"</p>
+              <p>Longitude: "{+this.state.position[1]}"</p>
             </div>
           </div>
           <MapContainer
@@ -135,6 +138,10 @@ class App extends React.Component {
             Gps Tracker
           </h1>
         </header>
+        <div className="d-flex justify-content-around">
+          <div id="av-orbit"></div>
+          <div id="av-orbit-48274"></div>
+        </div>
         <div className="d-flex px-3 py-3 mb-2 h-fluid">{this.displayC()}</div>
         <footer className="d-flex bg-light mx-2 my-2 border rounded shadow justify-content-around py-3">
           <div>

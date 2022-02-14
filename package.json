@@ -1,4 +1,5 @@
 {
+  "homepage": "https://marin-stefan.github.io/Gps-Tracker",
   "name": "gps-tracker",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +16,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -32,6 +35,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/leaflet": "^1.7.5"
+    "@types/leaflet": "^1.7.5",
+    "gh-pages": "^3.2.3"
   }
 }
