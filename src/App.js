@@ -8,14 +8,14 @@ class App extends React.Component {
     super();
     this.state = {
       isRunning: true,
-      position: [12,12],
+      position: null,
       interval: 0,
       intervalId: null,
     };
   }
 
   componentDidMount() {
-    this.getCoordinates(10000000000); 
+    this.getCoordinates(1000); 
   }
 
   handleClick = (interval) => {
