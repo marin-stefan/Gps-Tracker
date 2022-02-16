@@ -55,7 +55,6 @@ class App extends React.Component {
               <div className="p-3 d-flex justify-content-around border border-warning rounded shadow ">
                 <div >
                   <input
-                    className=""
                     type="range"
                     min="1"
                     max="5"
@@ -140,7 +139,7 @@ class App extends React.Component {
             Gps Tracker
           </h1>
         </header>
-        <div className=" mb-2 h-fluid  mx-2 my-2 border rounded shadow">
+        <div className=" px-2 py-2 mb-2 h-fluid  mx-2 my-2 border rounded shadow">
           {this.displayC()}
         </div>
         <footer className="footer d-flex flex-wrap bg-light mx-2 my-2 border rounded shadow justify-content-around py-3">
