@@ -8,14 +8,14 @@ class App extends React.Component {
     super();
     this.state = {
       isRunning: true,
-      position: null,
+      position: [12,12],
       interval: 0,
       intervalId: null,
     };
   }
 
   componentDidMount() {
-    this.getCoordinates(1000); 
+    this.getCoordinates(10000000000); 
   }
 
   handleClick = (interval) => {
@@ -70,7 +70,7 @@ class App extends React.Component {
 
                   <button
                     disabled={this.state.isRunning}
-                    className=" btn btn-primary py-1 mx-2"
+                    className=" btn btn-primary py-1 mx-2 my-1"
                     onClick={() =>
                       this.handleClick(
                         document.querySelector("#secondsRange").value * 1000
@@ -88,22 +88,14 @@ class App extends React.Component {
                       clearInterval(this.state.intervalId);
                       this.setState({ isRunning: false });
                     }}
-                    className=" btn btn-primary"
+                    className=" btn btn-primary py-1 mx-2 my-1"
                   >
                     Stop
                   </button>
                 </div>
               </div>
 
-              <div className="p-3 d-flex flex-wrap justify-content-around">
-                <h4>
-                  {this.state.isRunning
-                    ? "Current location is :"
-                    : "Last location was :"}
-                </h4>
-                <h4>Latitude : "{+this.state.position[0]}"</h4>
-                <h4> Longitude: "{+this.state.position[1]}"</h4>
-              </div>
+              
             </div>
           </div>
           <div className="row">
@@ -123,6 +115,15 @@ class App extends React.Component {
                 </Popup>
               </Marker>
             </MapContainer>
+            <div className="p-3 d-flex flex-wrap justify-content-around">
+                <h4>
+                  {this.state.isRunning
+                    ? "Current location is :"
+                    : "Last location was :"}
+                </h4>
+                <h4>Latitude : "{+this.state.position[0]}"</h4>
+                <h4> Longitude: "{+this.state.position[1]}"</h4>
+              </div>
           </div>
         </div>
       );
