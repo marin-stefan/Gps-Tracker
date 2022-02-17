@@ -9,13 +9,13 @@ class App extends React.Component {
     this.state = {
       isRunning: true,
       position: null,
-      interval: 0,
+      interval: 1000,
       intervalId: null,
     };
   }
 
   componentDidMount() {
-    this.getCoordinates(1000); 
+    this.getCoordinates(1000);
   }
 
   handleClick = (interval) => {
@@ -45,15 +45,23 @@ class App extends React.Component {
   displayC() {
     if (this.state.position) {
       return (
-        <div className="px-2 container ">
-          <div className="py-4 row">
-            <div className="col">
-              <h2 className="py-2 text-center">
+        <div className="container-fluid">
+
+
+          <div className="container">
+
+            <div className="row">
+              <h2 className="col-12 text-center m-1">
                 Live location of the International Space Station
               </h2>
 
-              <div className="p-3 d-flex justify-content-around border border-warning rounded shadow ">
-                <div >
+              <div className="col-12 d-flex flex-wrap justify-content-center">
+                
+                <div className="d-flex">
+                  <div className="fs-5 px-2 ">
+                    {this.state.isRunning ? this.state.interval / 1000 : "0"}
+                    sec
+                  </div>
                   <input
                     type="range"
                     min="1"
@@ -67,7 +75,9 @@ class App extends React.Component {
                       );
                     }}
                   />
+                </div>
 
+                <div className="d-flex justify-content-around">
                   <button
                     disabled={this.state.isRunning}
                     className=" btn btn-primary py-1 mx-2 my-1"
@@ -77,11 +87,8 @@ class App extends React.Component {
                       )
                     }
                   >
-                    {this.state.isRunning
-                      ? `Running at ${this.state.interval / 1000} interval`
-                      : "Start"}
+                    {this.state.isRunning ? "Running" : "Start"}
                   </button>
-
                   <button
                     disabled={!this.state.isRunning}
                     onClick={() => {
@@ -93,14 +100,18 @@ class App extends React.Component {
                     Stop
                   </button>
                 </div>
-              </div>
 
-              
+
+
+
+                
+              </div>
             </div>
           </div>
-          <div className="row">
+
+          <div>
             <MapContainer
-              className="rounded-3 border border-warning shadow-lg mx-2 col min-vh-100"
+              className="rounded-3 border border-warning shadow-lg mx-2 "
               center={this.state.position}
               zoom={5}
               scrollWheelZoom={false}
@@ -115,16 +126,18 @@ class App extends React.Component {
                 </Popup>
               </Marker>
             </MapContainer>
-            <div className="p-3 d-flex flex-wrap justify-content-around">
-                <h4>
-                  {this.state.isRunning
-                    ? "Current location is :"
-                    : "Last location was :"}
-                </h4>
-                <h4>Latitude : "{+this.state.position[0]}"</h4>
-                <h4> Longitude: "{+this.state.position[1]}"</h4>
-              </div>
+            <div className="my-2 d-flex flex-wrap justify-content-around">
+              <h4>
+                {this.state.isRunning
+                  ? "Current location is :"
+                  : "Last location was :"}
+              </h4>
+              <h4>Latitude : "{+this.state.position[0]}"</h4>
+              <h4> Longitude: "{+this.state.position[1]}"</h4>
+            </div>
           </div>
+
+
         </div>
       );
     } else {
