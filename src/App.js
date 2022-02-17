@@ -126,7 +126,7 @@ class App extends React.Component {
                 </Popup>
               </Marker>
             </MapContainer>
-            <div className="my-2 d-flex flex-wrap justify-content-around bg-warning">
+            <div className="my-2 d-flex flex-wrap justify-content-around">
               <h4>
                 {this.state.isRunning
                   ? "Current location is :"
