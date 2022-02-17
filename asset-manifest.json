@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Gps-Tracker/static/css/main.4f8e1e48.chunk.css",
-    "main.js": "/Gps-Tracker/static/js/main.5ca8a025.chunk.js",
-    "main.js.map": "/Gps-Tracker/static/js/main.5ca8a025.chunk.js.map",
+    "main.css": "/Gps-Tracker/static/css/main.b635989a.chunk.css",
+    "main.js": "/Gps-Tracker/static/js/main.842ac914.chunk.js",
+    "main.js.map": "/Gps-Tracker/static/js/main.842ac914.chunk.js.map",
     "runtime-main.js": "/Gps-Tracker/static/js/runtime-main.fccc2a78.js",
     "runtime-main.js.map": "/Gps-Tracker/static/js/runtime-main.fccc2a78.js.map",
     "static/css/2.a75f5a2c.chunk.css": "/Gps-Tracker/static/css/2.a75f5a2c.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.2f2846d2.chunk.js.map": "/Gps-Tracker/static/js/3.2f2846d2.chunk.js.map",
     "index.html": "/Gps-Tracker/index.html",
     "static/css/2.a75f5a2c.chunk.css.map": "/Gps-Tracker/static/css/2.a75f5a2c.chunk.css.map",
-    "static/css/main.4f8e1e48.chunk.css.map": "/Gps-Tracker/static/css/main.4f8e1e48.chunk.css.map",
+    "static/css/main.b635989a.chunk.css.map": "/Gps-Tracker/static/css/main.b635989a.chunk.css.map",
     "static/js/2.a6dbc526.chunk.js.LICENSE.txt": "/Gps-Tracker/static/js/2.a6dbc526.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fccc2a78.js",
     "static/css/2.a75f5a2c.chunk.css",
     "static/js/2.a6dbc526.chunk.js",
-    "static/css/main.4f8e1e48.chunk.css",
-    "static/js/main.5ca8a025.chunk.js"
+    "static/css/main.b635989a.chunk.css",
+    "static/js/main.842ac914.chunk.js"
   ]
 }
